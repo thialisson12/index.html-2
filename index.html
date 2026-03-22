@@ -68,9 +68,53 @@
     }
 
     .hero {
+      position: relative;
+      overflow: hidden;
       background: linear-gradient(135deg, #f7f7f7, #ececec);
       text-align: center;
       padding: 90px 20px 70px;
+    }
+
+    .hero::before {
+      content: "SOMAR";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(0.9);
+      font-size: 180px;
+      font-weight: 900;
+      letter-spacing: 12px;
+      color: rgba(0, 0, 0, 0.06);
+      filter: blur(2px);
+      opacity: 0;
+      animation: fadeSOMAR 1.8s ease forwards;
+      white-space: nowrap;
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
+
+    .hero .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    @keyframes fadeSOMAR {
+      0% {
+        opacity: 0;
+        transform: translate(-50%, -40%) scale(0.8);
+        filter: blur(6px);
+      }
+      60% {
+        opacity: 1;
+        transform: translate(-50%, -52%) scale(1.02);
+        filter: blur(2px);
+      }
+      100% {
+        opacity: 1;
+        transform: translate(-50%, -50%) scale(1);
+        filter: blur(2px);
+      }
     }
 
     .hero h1 {
@@ -332,6 +376,11 @@
       .logo-subtext {
         font-size: 0.72rem;
         letter-spacing: 2px;
+      }
+
+      .hero::before {
+        font-size: 90px;
+        letter-spacing: 6px;
       }
 
       .hero h1 {
