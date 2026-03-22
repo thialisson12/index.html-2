@@ -104,6 +104,14 @@
       transform: translateY(-2px);
     }
 
+    .instagram {
+      background: linear-gradient(45deg, #fd1d1d, #fcb045, #833ab4);
+    }
+
+    .instagram:hover {
+      filter: brightness(0.9);
+    }
+
     .section {
       padding: 70px 20px;
     }
@@ -222,15 +230,9 @@
     }
 
     @keyframes pulse {
-      0% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
-      }
-      70% {
-        box-shadow: 0 0 0 18px rgba(37, 211, 102, 0);
-      }
-      100% {
-        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
-      }
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+      70% { box-shadow: 0 0 0 18px rgba(37, 211, 102, 0); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
     }
 
     @media (max-width: 768px) {
@@ -245,16 +247,8 @@
         letter-spacing: 2px;
       }
 
-      .hero {
-        padding: 70px 20px 60px;
-      }
-
       .hero h1 {
         font-size: 1.8rem;
-      }
-
-      .section-title {
-        font-size: 1.7rem;
       }
 
       .btn {
@@ -264,6 +258,7 @@
     }
   </style>
 </head>
+
 <body>
 
   <header>
@@ -278,10 +273,16 @@
       <h1>Atendimento Rápido em Pomerode-SC e Região</h1>
       <p>
         Serviços profissionais realizados com qualidade, segurança e compromisso.
-        Atendimento ágil para residências, comércios e empresas.
       </p>
+
       <a class="btn" href="https://wa.me/5547996884563" target="_blank">
         Solicitar Orçamento no WhatsApp
+      </a>
+
+      <br><br>
+
+      <a class="btn instagram" href="https://www.instagram.com/somar.eletr.hidr.clim?igsh=Yjg3MzZxMGE2cmVs" target="_blank">
+        Solicitar Orçamento no Instagram
       </a>
     </div>
   </section>
@@ -289,46 +290,21 @@
   <section class="section">
     <div class="container">
       <h2 class="section-title">Nossos Serviços</h2>
-      <p class="section-subtitle">Soluções práticas, seguras e profissionais para atender sua necessidade.</p>
 
       <div class="grid">
         <div class="card">
           <h3>Instalações</h3>
-          <p>Serviços executados com qualidade, atenção aos detalhes e segurança.</p>
+          <p>Serviços com qualidade e segurança.</p>
         </div>
 
         <div class="card">
           <h3>Manutenção</h3>
-          <p>Correção de falhas, ajustes e suporte técnico para manter tudo funcionando.</p>
+          <p>Correção de falhas e ajustes.</p>
         </div>
 
         <div class="card">
           <h3>Organização</h3>
-          <p>Serviço limpo, organizado e realizado com padrão profissional.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section highlight">
-    <div class="container">
-      <h2 class="section-title">Por que escolher a Somar?</h2>
-      <p class="section-subtitle">Compromisso com qualidade, agilidade e confiança em cada atendimento.</p>
-
-      <div class="grid">
-        <div class="card">
-          <h3>Atendimento Ágil</h3>
-          <p>Resposta rápida para quem precisa de solução sem demora.</p>
-        </div>
-
-        <div class="card">
-          <h3>Serviço Profissional</h3>
-          <p>Execução cuidadosa, segura e com acabamento de qualidade.</p>
-        </div>
-
-        <div class="card">
-          <h3>Confiança e Compromisso</h3>
-          <p>Transparência no atendimento e foco total na satisfação do cliente.</p>
+          <p>Serviço limpo e profissional.</p>
         </div>
       </div>
     </div>
@@ -337,10 +313,10 @@
   <section class="section">
     <div class="container">
       <h2 class="section-title">Contato</h2>
-      <p class="section-subtitle">Entre em contato e solicite seu orçamento.</p>
 
       <div class="contact-box">
         <p>📞 <strong>(47) 99688-4563</strong></p>
+
         <a class="btn" href="https://wa.me/5547996884563" target="_blank">
           Falar no WhatsApp
         </a>
@@ -349,10 +325,10 @@
   </section>
 
   <footer>
-    <p>© 2026 Somar Prestadora de Serviços - Todos os direitos reservados.</p>
+    <p>© 2026 Somar Prestadora de Serviços</p>
   </footer>
 
-  <a href="https://wa.me/5547996884563" class="whatsapp-float" target="_blank" aria-label="WhatsApp">
+  <a href="https://wa.me/5547996884563" class="whatsapp-float">
     <span>💬</span>
   </a>
 
