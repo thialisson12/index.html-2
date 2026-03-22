@@ -1,199 +1,251 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Somar Prestadora de Serviços | Pomerode-SC</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Somar Prestadora de Serviços em Pomerode-SC</title>
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
 
-    body {
-      font-family: Arial, sans-serif;
-      background:#fff;
-      color:#222;
-    }
+body{
+  font-family:Arial, sans-serif;
+  background:#fff;
+  color:#333;
+}
 
-    header {
-      text-align:center;
-      padding:20px;
-      border-bottom:1px solid #eee;
-    }
+/* HEADER */
+header{
+  text-align:center;
+  padding:20px;
+  border-bottom:1px solid #eee;
+}
 
-    .logo-text {
-      font-size:2rem;
-      font-weight:900;
-      letter-spacing:3px;
-      color:#000;
-      -webkit-text-stroke:1.5px #ff8c00;
-    }
+.logo-text{
+  font-size:32px;
+  font-weight:900;
+  color:#000;
+  letter-spacing:2px;
+  -webkit-text-stroke:1.5px #ff8c00;
+}
 
-    .hero {
-      position:relative;
-      overflow:hidden;
-      text-align:center;
-      padding:100px 20px;
-      background:linear-gradient(135deg,#f7f7f7,#ececec);
-    }
+/* HERO */
+.hero{
+  position:relative;
+  overflow:hidden;
+  text-align:center;
+  padding:80px 20px;
+  background:#f5f5f5;
+}
 
-    /* FUNDO SOMAR PREMIUM */
-    .hero::before {
-      content:"SOMAR";
-      position:absolute;
-      top:50%;
-      left:50%;
-      transform:translate(-50%,-50%) scale(0.9);
-      font-size:180px;
-      font-weight:900;
-      letter-spacing:12px;
+/* FUNDO SOMAR PREMIUM */
+.hero::before{
+  content:"SOMAR";
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%) scale(0.9);
+  font-size:180px;
+  font-weight:900;
+  letter-spacing:10px;
 
-      color:rgba(255,140,0,0.08);
+  color:rgba(255,140,0,0.08);
 
-      /* 🔥 GLOW LARANJA */
-      text-shadow:
-        0 0 10px rgba(255,140,0,0.15),
-        0 0 20px rgba(255,140,0,0.08);
+  text-shadow:
+    0 0 15px rgba(255,140,0,0.2),
+    0 0 30px rgba(255,140,0,0.1);
 
-      filter:blur(2px);
+  filter:blur(2px);
 
-      opacity:0;
-      animation:fadeSOMAR 1.8s ease forwards;
+  opacity:0;
+  animation:fadeSOMAR 1.8s ease forwards;
 
-      z-index:0;
-      pointer-events:none;
-    }
+  pointer-events:none;
+  z-index:0;
+}
 
-    /* ANIMAÇÃO ENTRADA */
-    @keyframes fadeSOMAR {
-      0% {
-        opacity:0;
-        transform:translate(-50%,-40%) scale(0.8);
-        filter:blur(6px);
-      }
-      100% {
-        opacity:1;
-        transform:translate(-50%,-50%) scale(1);
-        filter:blur(2px);
-      }
-    }
+/* CONTEÚDO NA FRENTE */
+.hero *{
+  position:relative;
+  z-index:1;
+}
 
-    .container {
-      position:relative;
-      z-index:1;
-      max-width:1000px;
-      margin:auto;
-    }
+/* ANIMAÇÃO FUNDO */
+@keyframes fadeSOMAR{
+  0%{
+    opacity:0;
+    transform:translate(-50%,-40%) scale(0.8);
+    filter:blur(6px);
+  }
+  100%{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+    filter:blur(2px);
+  }
+}
 
-    h1 {
-      font-size:2rem;
-      margin-bottom:15px;
-    }
+/* SCROLL EFFECT */
+.scrolled .hero::before{
+  color:rgba(255,140,0,0.15);
+  text-shadow:
+    0 0 25px rgba(255,140,0,0.4),
+    0 0 50px rgba(255,140,0,0.2);
+  transform:translate(-50%,-50%) scale(1.05);
+}
 
-    p {
-      color:#555;
-    }
+/* BOTÕES */
+.button-group{
+  margin-top:25px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  gap:15px;
+}
 
-    .buttons {
-      margin-top:30px;
-      display:flex;
-      flex-direction:column;
-      gap:15px;
-      align-items:center;
-    }
+.btn{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  padding:16px 25px;
+  border-radius:15px;
+  color:#fff;
+  text-decoration:none;
+  font-weight:bold;
+  min-width:280px;
 
-    .btn {
-      display:flex;
-      align-items:center;
-      gap:10px;
-      padding:16px 25px;
-      border-radius:15px;
-      color:#fff;
-      font-weight:bold;
-      text-decoration:none;
-      min-width:280px;
-      justify-content:center;
-      transition:0.3s;
-      transform:translateY(30px);
-      opacity:0;
-      animation:fadeUp 0.8s forwards;
-    }
+  box-shadow:0 10px 25px rgba(0,0,0,0.15);
 
-    .btn:nth-child(1){ animation-delay:0.3s; }
-    .btn:nth-child(2){ animation-delay:0.5s; }
+  opacity:0;
+  transform:translateY(30px);
+  animation:fadeUp 0.8s forwards;
+}
 
-    @keyframes fadeUp {
-      to {
-        opacity:1;
-        transform:translateY(0);
-      }
-    }
+.btn:nth-child(1){animation-delay:0.3s;}
+.btn:nth-child(2){animation-delay:0.5s;}
 
-    .whatsapp {
-      background:#25d366;
-      box-shadow:0 10px 25px rgba(37,211,102,0.3);
-    }
+@keyframes fadeUp{
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 
-    .instagram {
-      background:#000;
-      box-shadow:0 10px 25px rgba(0,0,0,0.3);
-    }
+.whatsapp{
+  background:#25d366;
+}
 
-    .btn:hover {
-      transform:scale(1.05);
-    }
+.instagram{
+  background:#000;
+}
 
-    /* 🔥 SCROLL EFFECT */
-    .scrolled .hero::before {
-      color:rgba(255,140,0,0.15);
-      text-shadow:
-        0 0 20px rgba(255,140,0,0.3),
-        0 0 40px rgba(255,140,0,0.15);
-      transform:translate(-50%,-50%) scale(1.05);
-    }
+.btn:hover{
+  transform:scale(1.05);
+}
 
-    footer {
-      text-align:center;
-      padding:20px;
-      border-top:1px solid #eee;
-    }
-  </style>
+/* SECTIONS */
+.section{
+  padding:50px 20px;
+  text-align:center;
+}
+
+.card{
+  background:#fff;
+  padding:20px;
+  margin:10px auto;
+  max-width:300px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* WHATS FLOAT */
+.whatsapp-float{
+  position:fixed;
+  bottom:20px;
+  right:20px;
+  background:#25d366;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+  0%{box-shadow:0 0 0 0 rgba(37,211,102,0.7);}
+  70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+  100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="logo-text">SOMAR</div>
+  <div class="logo-text">SOMAR PRESTADORA DE SERVIÇOS</div>
 </header>
 
 <section class="hero">
-  <div class="container">
-    <h1>Atendimento Rápido em Pomerode-SC e Região</h1>
-    <p>Serviços profissionais realizados com qualidade, segurança e compromisso.</p>
+  <h2>Atendimento Rápido em Pomerode-SC e Região</h2>
+  <p>Serviços profissionais com qualidade e segurança</p>
 
-    <div class="buttons">
-      <a class="btn whatsapp" href="https://wa.me/5547996884563?text=Ol%C3%A1%2C%20tudo%20bem%3F%20%F0%9F%91%8B%0AGostaria%20de%20solicitar%20um%20or%C3%A7amento%21" target="_blank">
-        📱 Solicitar Orçamento no WhatsApp
-      </a>
+  <div class="button-group">
+    <a class="btn whatsapp" href="https://wa.me/5547996884563?text=Ol%C3%A1%2C%20tudo%20bem%3F%20%F0%9F%91%8B%0AGostaria%20de%20solicitar%20um%20or%C3%A7amento%21" target="_blank">
+      📱 Solicitar Orçamento no WhatsApp
+    </a>
 
-      <a class="btn instagram" href="https://www.instagram.com/somar.eletr.hidr.clim?igsh=Yjg3MzZxMGE2cmVs" target="_blank">
-        📸 Solicitar Orçamento no Instagram
-      </a>
-    </div>
+    <a class="btn instagram" href="https://www.instagram.com/somar.eletr.hidr.clim?igsh=Yjg3MzZxMGE2cmVs" target="_blank">
+      📸 Solicitar Orçamento no Instagram
+    </a>
   </div>
 </section>
 
-<footer>
-  © 2026 Somar Prestadora de Serviços
+<section class="section">
+  <h2>Serviços</h2>
+
+  <div class="card">
+    <h3>Instalações</h3>
+    <p>Serviços com qualidade e segurança.</p>
+  </div>
+
+  <div class="card">
+    <h3>Manutenção</h3>
+    <p>Correção de falhas e ajustes.</p>
+  </div>
+
+  <div class="card">
+    <h3>Organização</h3>
+    <p>Serviço limpo e profissional.</p>
+  </div>
+</section>
+
+<section class="section">
+  <h2>Contato</h2>
+  <p>📞 (47) 99688-4563</p>
+
+  <a class="btn whatsapp" href="https://wa.me/5547996884563?text=Ol%C3%A1%2C%20tudo%20bem%3F%20%F0%9F%91%8B%0AGostaria%20de%20solicitar%20um%20or%C3%A7amento%21" target="_blank" style="opacity:1;transform:none;">
+    Falar no WhatsApp
+  </a>
+</section>
+
+<footer class="section">
+  <p>© 2026 Somar Prestadora de Serviços</p>
 </footer>
 
+<a href="https://wa.me/5547996884563?text=Ol%C3%A1%2C%20tudo%20bem%3F%20%F0%9F%91%8B%0AGostaria%20de%20solicitar%20um%20or%C3%A7amento%21" class="whatsapp-float">
+  💬
+</a>
+
 <script>
-  window.addEventListener("scroll", () => {
-    if (window.scrollY > 50) {
-      document.body.classList.add("scrolled");
-    } else {
-      document.body.classList.remove("scrolled");
-    }
-  });
+window.addEventListener("scroll", () => {
+  if (window.scrollY > 50) {
+    document.body.classList.add("scrolled");
+  } else {
+    document.body.classList.remove("scrolled");
+  }
+});
 </script>
 
 </body>
